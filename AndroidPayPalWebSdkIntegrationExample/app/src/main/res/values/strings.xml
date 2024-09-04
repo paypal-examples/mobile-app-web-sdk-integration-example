@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">AndroidPayPalWebSdkIntegrationExample</string>
+    <string name="action_shopping_cart">Shopping Cart</string>
+    <string name="merchant_hosted_checkout_web_url_spb">https://shipping-change-sandbox-e66e294a9266.herokuapp.com/buttons.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&amp;onCancelUrl==https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/</string>
+    <string name="merchant_hosted_checkout_web_url_api">https://shipping-change-sandbox-e66e294a9266.herokuapp.com/api-integration.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&amp;onCancelUrl==https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/</string>
+    <string name="paypal_dot_com_web_url">https://www.paypal.com</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="shopping_cart_fragment_label">Cart Details</string>
+    <string name="catalog_fragment_label">Catalog</string>
+    <string name="checkoutPayPalSpb">PayPal Checkout SPB</string>
+    <string name="checkoutPayPalApi">PayPal Checkout API</string>
+    <string name="productCatalogButtonLabel">Product Catalog</string>
+    <string name="launchPaypalDotCom">Open PayPal.com</string>
+    <string name="closeBtnLabel">Close</string>
+    <string name="paymentCompletionSuccess">Your payment is successfully completed.</string>
+    <string name="paymentCompletionSuccessPayPalOrderId">PayPal Order ID =</string>
+    <string name="payPalOrderDetailsLoading">Fetch PayPal Order Details from your REST API and display the necessary information to the buyer</string>
+
+    <string name="shopping_cart_page_description">
+        The shopping cart page should provide a clear and organized summary of all items selected
+        for purchase. At the top, it should display a concise overview of the total number of
+        items and the overall cost, including any applicable taxes and shipping fees.
+        Each product in the cart should be listed with a thumbnail image, brief description,
+        quantity selector, and individual price. Users should have the ability to easily update
+        quantities or remove items. The page should also feature options to apply discount codes
+        or gift cards and provide a detailed breakdown of costs. Prominent buttons for proceeding
+        to checkout and continuing shopping should be readily accessible. Additionally, the cart
+        page should offer an option to save items for later, ensuring a smooth transition between
+        shopping and checkout while enhancing the overall user experience.
+    </string>
+
+    <string name="catalog_page_description">
+        This is an example catalog page.
+        The catalog page of a your mobile app should offer a seamless and engaging shopping experience.
+        At the top, it should feature a search bar for easy product or category lookup, alongside filter
+        and sort options to refine search results by attributes such as price, popularity,
+        or new arrivals. The page should prominently display product categories with intuitive icons
+        or images, and showcase featured products through high-quality visuals and brief descriptions.
+        Users should be able to view products in a grid or list format, with options for quick previews
+        and detailed views. Additional elements include promotional banners for special offers,
+        user reviews and ratings to guide purchase decisions, and easy access to the cart and
+        wishlist. To enhance usability, the page should support personalization features,
+        such as product recommendations, and include accessibility options like text size adjustment
+        and high contrast mode. Interactive features like product zoom and 360-degree views can
+        further enrich the user experience.
+    </string>
+</resources>
