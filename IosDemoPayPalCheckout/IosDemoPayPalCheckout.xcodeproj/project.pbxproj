@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC4CED7C2C5F3ACE000BD4E6 /* PayPalCheckoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CED7B2C5F3ACE000BD4E6 /* PayPalCheckoutApp.swift */; };
+		AC4CED7E2C5F3ACE000BD4E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CED7D2C5F3ACE000BD4E6 /* ContentView.swift */; };
+		AC4CED802C5F3AD1000BD4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4CED7F2C5F3AD1000BD4E6 /* Assets.xcassets */; };
+		AC4CED832C5F3AD1000BD4E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4CED822C5F3AD1000BD4E6 /* Preview Assets.xcassets */; };
+		AC4CED8A2C5F403B000BD4E6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC4CED892C5F403B000BD4E6 /* .gitignore */; };
+		AC66AC222C65285C005CB634 /* PayPalPaymentFailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66AC212C65285C005CB634 /* PayPalPaymentFailureView.swift */; };
+		ACCC8EED2C61789200C1EF64 /* AppNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCC8EEC2C61789200C1EF64 /* AppNavigationViewModel.swift */; };
+		ACCC8EF12C617D6000C1EF64 /* CartDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCC8EF02C617D6000C1EF64 /* CartDetailsView.swift */; };
+		ACCC8EF32C6181CC00C1EF64 /* PayPalPaymentSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCC8EF22C6181CC00C1EF64 /* PayPalPaymentSuccessView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC4CED782C5F3ACE000BD4E6 /* IosDemoPayPalCheckout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosDemoPayPalCheckout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4CED7B2C5F3ACE000BD4E6 /* PayPalCheckoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalCheckoutApp.swift; sourceTree = "<group>"; };
+		AC4CED7D2C5F3ACE000BD4E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC4CED7F2C5F3AD1000BD4E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC4CED822C5F3AD1000BD4E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC4CED892C5F403B000BD4E6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AC66AC212C65285C005CB634 /* PayPalPaymentFailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalPaymentFailureView.swift; sourceTree = "<group>"; };
+		ACCC8EEB2C6173BE00C1EF64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ACCC8EEC2C61789200C1EF64 /* AppNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationViewModel.swift; sourceTree = "<group>"; };
+		ACCC8EF02C617D6000C1EF64 /* CartDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsView.swift; sourceTree = "<group>"; };
+		ACCC8EF22C6181CC00C1EF64 /* PayPalPaymentSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalPaymentSuccessView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC4CED752C5F3ACE000BD4E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC4CED6F2C5F3ACE000BD4E6 = {
+			isa = PBXGroup;
+			children = (
+				AC4CED892C5F403B000BD4E6 /* .gitignore */,
+				AC4CED7A2C5F3ACE000BD4E6 /* IosDemoPayPalCheckout */,
+				AC4CED792C5F3ACE000BD4E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC4CED792C5F3ACE000BD4E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC4CED782C5F3ACE000BD4E6 /* IosDemoPayPalCheckout.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC4CED7A2C5F3ACE000BD4E6 /* IosDemoPayPalCheckout */ = {
+			isa = PBXGroup;
+			children = (
+				ACCC8EEB2C6173BE00C1EF64 /* Info.plist */,
+				AC4CED7B2C5F3ACE000BD4E6 /* IosDemoPayPalCheckoutApp.swift */,
+				AC4CED7D2C5F3ACE000BD4E6 /* ContentView.swift */,
+				AC4CED7F2C5F3AD1000BD4E6 /* Assets.xcassets */,
+				AC4CED812C5F3AD1000BD4E6 /* Preview Content */,
+				ACCC8EEC2C61789200C1EF64 /* AppNavigationViewModel.swift */,
+				AC4CED7F2C5F3AD1000BD4E6 /* Assets.xcassets */,
+				ACCC8EF02C617D6000C1EF64 /* CartDetailsView.swift */,
+				AC4CED7D2C5F3ACE000BD4E6 /* ContentView.swift */,
+				ACCC8EEB2C6173BE00C1EF64 /* Info.plist */,
+				AC565CE42C76B13A00F1E0BF /* IosDemoPayPalCheckout.entitlements */,
+				AC949DA32C7D119F009DDF8C /* IosDemoPayPalCheckoutRelease.entitlements */,
+				AC4CED7B2C5F3ACE000BD4E6 /* PayPalCheckoutApp.swift */,
+				AC66AC212C65285C005CB634 /* PayPalPaymentFailureView.swift */,
+				ACCC8EF22C6181CC00C1EF64 /* PayPalPaymentSuccessView.swift */,
+				AC4CED812C5F3AD1000BD4E6 /* Preview Content */,
+			);
+			path = IosDemoPayPalCheckout;
+			sourceTree = "<group>";
+		};
+		AC4CED812C5F3AD1000BD4E6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AC4CED822C5F3AD1000BD4E6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC4CED772C5F3ACE000BD4E6 /* IosDemoPayPalCheckout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC4CED862C5F3AD1000BD4E6 /* Build configuration list for PBXNativeTarget "IosDemoPayPalCheckout" */;
+			buildPhases = (
+				AC4CED742C5F3ACE000BD4E6 /* Sources */,
+				AC4CED752C5F3ACE000BD4E6 /* Frameworks */,
+				AC4CED762C5F3ACE000BD4E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IosDemoPayPalCheckout;
+			productName = IosDemoPayPalCheckout;
+			productReference = AC4CED782C5F3ACE000BD4E6 /* IosDemoPayPalCheckout.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC4CED702C5F3ACE000BD4E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					AC4CED772C5F3ACE000BD4E6 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = AC4CED732C5F3ACE000BD4E6 /* Build configuration list for PBXProject "IosDemoPayPalCheckout" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC4CED6F2C5F3ACE000BD4E6;
+			productRefGroup = AC4CED792C5F3ACE000BD4E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC4CED772C5F3ACE000BD4E6 /* IosDemoPayPalCheckout */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC4CED762C5F3ACE000BD4E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4CED832C5F3AD1000BD4E6 /* Preview Assets.xcassets in Resources */,
+				AC4CED8A2C5F403B000BD4E6 /* .gitignore in Resources */,
+				AC4CED802C5F3AD1000BD4E6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC4CED742C5F3ACE000BD4E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACCC8EF12C617D6000C1EF64 /* CartDetailsView.swift in Sources */,
+				AC4CED7E2C5F3ACE000BD4E6 /* ContentView.swift in Sources */,
+				AC4CED7C2C5F3ACE000BD4E6 /* PayPalCheckoutApp.swift in Sources */,
+				AC66AC222C65285C005CB634 /* PayPalPaymentFailureView.swift in Sources */,
+				ACCC8EED2C61789200C1EF64 /* AppNavigationViewModel.swift in Sources */,
+				ACCC8EF32C6181CC00C1EF64 /* PayPalPaymentSuccessView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AC4CED842C5F3AD1000BD4E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC4CED852C5F3AD1000BD4E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC4CED872C5F3AD1000BD4E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IosDemoPayPalCheckout/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IosDemoPayPalCheckout/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.IosDemoPayPalCheckout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC4CED882C5F3AD1000BD4E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IosDemoPayPalCheckout/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IosDemoPayPalCheckout/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.IosDemoPayPalCheckout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC4CED732C5F3ACE000BD4E6 /* Build configuration list for PBXProject "IosDemoPayPalCheckout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4CED842C5F3AD1000BD4E6 /* Debug */,
+				AC4CED852C5F3AD1000BD4E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC4CED862C5F3AD1000BD4E6 /* Build configuration list for PBXNativeTarget "IosDemoPayPalCheckout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4CED872C5F3AD1000BD4E6 /* Debug */,
+				AC4CED882C5F3AD1000BD4E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC4CED702C5F3ACE000BD4E6 /* Project object */;
+}
