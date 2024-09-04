@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.androidpaypalwebsdkintegrationexample",
+    "sha256_cert_fingerprints":
+    ["BB:37:93:3D:E5:62:2E:5B:98:CA:6A:A2:A9:0D:3E:60:6E:88:B0:0C:74:DF:27:E8:43:CE:13:1E:12:F3:26:1E"]
+  }
+}]
