@@ -38,3 +38,35 @@ export async function iosAppLinkController(fastify: FastifyInstance) {
     )
   );
 }
+
+export async function redirectBackToAppController(fastify: FastifyInstance) {
+  fastify.route({
+    url: "/paypal-checkout-complete",
+    method: "GET",
+    handler: async function (request: FastifyRequest, reply: FastifyReply) {
+      // **Important** : Validate these URLs against an allowed list of URLs.
+      // Never Trust any input from Web URLs
+      const { redirectUrl, token } = request.query as {
+        redirectUrl: string;
+        token: string;
+      };
+      if (redirectUrl) {
+        // MUST VALIDATE redirectUrl AGAINST AN ALLOWED LIST
+        const url = new URL(redirectUrl);
+        url.searchParams.append("payPalOrderID", token);
+        reply.status(302).redirect(url.href);
+      } else {
+        reply.send(
+          `Error: no redirectUrl URL is configured to redirect to Mobile App`
+        );
+      }
+    },
+    schema: {
+      querystring: {
+        redirectUrl: { type: "string" },
+        // PayPal passes the OrderId as token in the redirect URL
+        token: { type: "string" },
+      },
+    },
+  });
+}

@@ -39,6 +39,13 @@
       const onCancelUrl = params.onCancelUrl;
 
       function loadPayPalSDK() {
+        if (!onApproveUrl || !onCancelUrl) {
+          resultMessage(
+            `<h2>Error: Approval and Cancel URLs have not been set.</h2><h3>Buttons wont't be loaded. Please pass onApproveUrl and onCancelUrl as query params.</h3>`
+          );
+          return;
+        }
+
         return fetch("/api/paypal/client-config")
           .then((response) => response.json())
           .then(({ clientID, webBaseUrl, currency, intent }) => {

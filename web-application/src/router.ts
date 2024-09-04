@@ -9,6 +9,7 @@ import { setErrorHandler } from "./controller/error-controller";
 import {
   androidAppLinkController,
   iosAppLinkController,
+  redirectBackToAppController,
 } from "./controller/app-association-controller";
 
 export default async function router(fastify: FastifyInstance) {
@@ -19,4 +20,5 @@ export default async function router(fastify: FastifyInstance) {
   fastify.register(getOrderController, { prefix: "/api/paypal" });
   fastify.register(androidAppLinkController);
   fastify.register(iosAppLinkController);
+  fastify.register(redirectBackToAppController);
 }

@@ -62,7 +62,11 @@ async function createOrderHandler(
   request: FastifyRequest,
   reply: FastifyReply
 ) {
-  const { cart } = request.body as { cart: CartItem[] };
+  const { cart, onCancelUrl, onApproveUrl } = request.body as {
+    cart: CartItem[];
+    onCancelUrl?: string;
+    onApproveUrl?: string;
+  };
   const { itemsArray, itemTotal } = getItemsAndTotal(cart);
 
   // Example shipping and tax calculation
@@ -126,6 +130,19 @@ async function createOrderHandler(
     },
     */
   }; //as CreateOrderRequestBody; //cast needed for payment_source.paypal with paypal-js@5.1.4
+
+  if (onCancelUrl) {
+    // **Important** : Validate these URLs against an allowed list of URLs.
+    // Never Trust any input from Web URLs
+    orderPayload.application_context = orderPayload.application_context || {};
+    orderPayload.application_context.cancel_url = onCancelUrl;
+  }
+  if (onApproveUrl) {
+    // **Important** : Validate these URLs against an allowed list of URLs.
+    // Never Trust any input from Web URLs
+    orderPayload.application_context = orderPayload.application_context || {};
+    orderPayload.application_context.return_url = onApproveUrl;
+  }
 
   const orderResponse = await createOrder({
     body: orderPayload,
@@ -194,6 +211,8 @@ export async function createOrderController(fastify: FastifyInstance) {
               },
             },
           },
+          onApproveUrl: { type: "string" },
+          onCancelUrl: { type: "string" },
         },
       },
     },

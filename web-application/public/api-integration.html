@@ -53,11 +53,11 @@
               // Important: Once the buyer completes the checkout on PayPal.com,
               // redirect the buyer back to your web application, then to your mobile application.
               onApproveUrl: new URL(
-                `/paypal-checkout-complete?successUrl=${onApproveUrl}`,
+                `/paypal-checkout-complete?redirectUrl=${onApproveUrl}`,
                 location.origin
               ).href,
               onCancelUrl: new URL(
-                `/paypal-checkout-complete?successUrl=${onCancelUrl}`,
+                `/paypal-checkout-complete?redirectUrl=${onCancelUrl}`,
                 location.origin
               ).href,
               cart: [
