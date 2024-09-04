@@ -2,7 +2,7 @@ import buildApp from "./app";
 
 const FASTIFY_PORT =
   Number(process.env.PORT) || Number(process.env.FASTIFY_PORT) || 3006;
-const FASTIFY_HOST = process.env.FASTIFY_HOST || "localhost";
+const FASTIFY_HOST = process.env.HOST || process.env.FASTIFY_HOST || "0.0.0.0";
 
 const envToLogger = {
   development: {
@@ -25,9 +25,10 @@ const app = buildApp({
   logger: envToLogger[environment] ?? true,
 });
 
-app.listen({
-  port: FASTIFY_PORT,
-  host: FASTIFY_HOST,
-});
-
-console.log(`🚀  Fastify server running on port ${FASTIFY_PORT}`);
+app
+  .listen({
+    port: FASTIFY_PORT,
+    host: FASTIFY_HOST,
+  })
+  .then((host) => console.log(`🚀  Fastify server started`, host))
+  .catch((err) => console.error("Error in starting server", err));
