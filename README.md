@@ -5,11 +5,17 @@ This Mono Repo contains three applications to demostrate examples of using PayPa
 2. A Sample Android Application using Java to show an example of using the above Web Application in your Android Application.
 3. A Sample iOS Application using SwiftUI to show an example of using the above Web Application in your iOS Application.
 
+------------------------------------------------------
 
 > **Important:** PayPal does not recommend using Webview to integrate PayPal Checkout with Native Mobile App. To deliver the best experience use [PayPal Android SDK](https://developer.paypal.com/docs/checkout/advanced/android/) and [PayPal iOS SDK](https://developer.paypal.com/docs/checkout/advanced/ios/). You can also use [Braintree iOS](https://developer.paypal.com/braintree/docs/guides/client-sdk/setup/ios/v5) and  [Braintree Android](https://developer.paypal.com/braintree/docs/guides/client-sdk/setup/android/v3) SDK.
 
 
+------------------------------------------------------
+
 You may use this guide as a reference to integrate a web Javascript SDK to launch a checkout experience in your mobile application if you cannot use Native SDKs. 
+
+
+------------------------------------------------------
 
 ## 1. Prerequisites
 1. You have a mobile application which is installed on buyer's mobile device.
