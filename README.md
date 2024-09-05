@@ -31,7 +31,7 @@ Before diving into integration, lets understand the payment flow
 3. Payment Options: Your web application renders supported payment options like PayPal, Venmo, etc. 
 4. User Action: Buyer selects one of the payment options, PayPal, from your web based checkout application and approves the payment on PayPal.com.
 5. Confirmation: PayPal returns a success response to your web checkout experience.
-6. Hand off to App: Your web checkout web application redirects the buyer back to success screen of your mobile application.
+6. Hand off to App: Your web application redirects the buyer back to success screen of your mobile application.
 
    
 ```mermaid
@@ -91,11 +91,11 @@ Create a web based checkout application which should serve PayPal [JavaScript SD
 
 If your mobile application provides a capability to add different items to a shopping cart and checkout, then you should store the cart information on your server and generate a cryptographically secure reference identifier of this shoppint cart. 
 
-You should then pass the reference identifier from your mobile app to your checkout web application's URL, when launching it in SFSafariViewController or Android Custom Tabs.
+You should then pass the reference identifier from your mobile application to your web application's URL, when launching it in SFSafariViewController or Android Custom Tabs.
 
 > **Important:** Do not pass cart details in URL query parameters. Use a secure REST/GraphQL API calls to store your cart information in your server side store from mobile app and only pass a cryptographically secure identifier like a session id or shopping cart id from mobile application to web application.
 
-Your web application should render the supported payment methods, like PayPal, Venmo, Debit or Credit Card and render the payment methods on the web application's entry page.
+Your web application should render the supported payment methods, like PayPal, Venmo, Debit or Credit Card on the web application's entry page.
 Once the buyer clicks one of available payment method, e.g. PayPal, approves the payment, present a success message on your web application along with a return to mobile app button.
 
 > **Important:** Attempting a redirection back to your mobile application without any interaction by the user may be declined by the Chrome / Safari due to transient activation.
