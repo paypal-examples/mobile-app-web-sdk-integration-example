@@ -1,5 +1,10 @@
 # mobile-app-web-sdk-integration-example
 
+This Mono Repo contains Three Applications to demostrate an example of using PayPal Web SDK in your Native Mobile Applications. 
+1. A Web Application which should be hosted on your Web Server
+2. A Sample Android Application using Java to show an example of using the above Web Application in your Android Application.
+3. A Sample iOS Application using SwiftUI to show an example of using the above Web Application in your iOS Application.
+
 
 > **Important:** PayPal does not recommend using Webview to integrate PayPal Checkout with Native Mobile App. To deliver the best experience use [PayPal Android SDK](https://developer.paypal.com/docs/checkout/advanced/android/) and [PayPal iOS SDK](https://developer.paypal.com/docs/checkout/advanced/ios/). You can also use [Braintree iOS](https://developer.paypal.com/braintree/docs/guides/client-sdk/setup/ios/v5) and  [Braintree Android](https://developer.paypal.com/braintree/docs/guides/client-sdk/setup/android/v3) SDK.
 
@@ -24,47 +29,57 @@ Before diving into integration, understand the payment flow:
    
 ```mermaid
 sequenceDiagram
-autoNumber
-actor buyer as Buyer
-participant app as NativeApp
-participant iab as In App Browser
-participant server as Your Server Side
-participant paypal as PayPal
+  actor buyer as Buyer
+  participant app as NativeApp
+  participant iab as In App Browser
+  participant server as Your Server Side
+  participant paypal as PayPal
+  autonumber
+
+  box rgb(255, 229, 127) Your App on Buyer's Mobile Device
+    participant app
+    participant iab
+  end
 
 
-box rgb(255, 229, 127) Your App on Buyer's Mobile Device
-participant app
-participant iab
-end
-
-
-
-activate buyer
-
-activate app
-
-buyer ->> app : Add Items to Cart
-app ->> server : Store Item Iformation 
-server -->> app : Cryptographically Secure ID e.g. session ID
-
-buyer ->> app : Taps Checkout
-
-app ->> iab : Open your Web Application using the the ID
-iab ->> server : fetch cart information, amount, supported payment methods, e.g. PayPal
-
-server -->> iab : Item Details, payment methods
-iab ->> paypal : Load Web SDK
-paypal --> iab : Web SDK Script
-iab ->> iab : Render Paypal Buttons
-
-
-
-deactivate app
-
-deactivate buyer
+  buyer ->> app: Add Items to Cart
+  app ->> server: Store Cart Iformation
+  server -->> app: Cryptographically Secure ID<br/>e.g. session ID
+  buyer ->> app: Taps Checkout
+  app ->> iab: Open your Web Application using the the ID
+  iab ->> server: fetch cart information, amount,<br/>supported payment methods, e.g. PayPal
+  server -->> iab: Item Details,<br/>payment methods,<br/>e.g. Paypal, Venmo
+  iab ->> paypal: Load Web SDK
+  paypal --> iab: Web SDK Script
+  iab ->> iab: Render Paypal Buttons
+    Note over iab: Subscribe to createOrder and onApprove<br/>Callback of PayPal Web SDK
+  buyer ->> iab: Click PayPal Button
+  iab ->>+ iab: createOrder callback
+  iab ->> server : Create Order
+  server ->> paypal: Create Order<br/>POST /v2/checkout/orders
+  paypal -->> server : Order ID
+  server ->> server: Update buyer session with Order ID
+  server -->> iab: Order ID
+  iab ->>+ iab : Return Order ID in createOrder callback
+  iab ->> iab: PayPal SDK launches PayPal Checkout
+  buyer ->> iab : Buyer approved Logins on Paypal.com and approves Payment
+  iab ->> iab : onApprove callback in invoked.
+  iab ->> server: Validate status of OrderID
+  server ->> paypal: Fetch Order details using Order ID<br/>GET /v2/checkout/orders/:orderID
+  Note over server: You can also capture or authorize the Order at this point<br/>if you are using Pay Now flow and<br/>there are no addtional actions required by buyer.
+  paypal -->> server : Order Details.
+  server ->> server: validate Order status is APPROVED  
+  server ->> server: Update the buyer session detals<br/>with payment status as approved
+  server -->> iab : OrderID is approved.
+  iab ->> iab : Success Screen is rended with Continue back to App Button
+  buyer ->> iab: Taps Continue back to App button.
+  iab ->> app: Redirect the Buyer back to Native App using Universal Links / Deep Links.
+  app ->> server: Validate the payment status of buyer session id
+  server -->> app: Buyer session has payment status as approved.
+  app ->> app : Render Success Screen to the Buyer.
 ```
 
-## 3. Host your Web Checkout experience
+## 3. Host your Web Checkout Experience
 Create a web based checkout application which should serve PayPal [JavaScript SDK](/sdk/js). Your web application must have an entry point (url endpoint) which your mobile app will redirect you.
 
 If your mobile app provides a capability to add different items to a shopping cart and checkout, then you should store the cart information on your server and generate a secure reference identifier of this shoppint cart. You should then pass the reference identifier from your mobile app to your checkout application's URL, when launching it inside  SFSafariViewController or Android Custom Tabs.
@@ -79,3 +94,9 @@ Once the buyer clicks one of available payment method, e.g. PayPal, approves the
 From the success page of your web application you should also notify your backend server that the buyer has approved the payment. This is crucial to avoid losing the status if the buyer taps on the close button of SFSafariViewController or Android Custom Tabs after approving the payment.
 
 Your mobile application should determine if the buyer has approved the session by doing a lookup on the reference identifier once the buyer is redirected back to your Mobile Application. 
+
+
+## 4. Update your Native Mobile App to launch In App Checkout experience
+You should use [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) or [Android Custom Tabs](https://developer.chrome.com/docs/android/custom-tabs) to launch In App Checkout Experience. 
+
+Follow the documentation provided by Android and iOS to handle any contingencies arising during launching of Safari View Controller or Custom Tabs
