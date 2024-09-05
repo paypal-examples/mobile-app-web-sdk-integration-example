@@ -21,12 +21,55 @@ Before diving into integration, understand the payment flow:
 4. Confirmation: PayPal returns a success or failure response to your web checkout experience.
 5. Hand off to App: Your web checkout web application redirects the buyer back to success screen of your mobile app.
 
+   
+```mermaid
+sequenceDiagram
+autoNumber
+actor buyer as Buyer
+participant app as NativeApp
+participant iab as In App Browser
+participant server as Your Server Side
+participant paypal as PayPal
+
+
+box rgb(255, 229, 127) Your App on Buyer's Mobile Device
+participant app
+participant iab
+end
+
+
+
+activate buyer
+
+activate app
+
+buyer ->> app : Add Items to Cart
+app ->> server : Store Item Iformation 
+server -->> app : Cryptographically Secure ID e.g. session ID
+
+buyer ->> app : Taps Checkout
+
+app ->> iab : Open your Web Application using the the ID
+iab ->> server : fetch cart information, amount, supported payment methods, e.g. PayPal
+
+server -->> iab : Item Details, payment methods
+iab ->> paypal : Load Web SDK
+paypal --> iab : Web SDK Script
+iab ->> iab : Render Paypal Buttons
+
+
+
+deactivate app
+
+deactivate buyer
+```
+
 ## 3. Host your Web Checkout experience
 Create a web based checkout application which should serve PayPal [JavaScript SDK](/sdk/js). Your web application must have an entry point (url endpoint) which your mobile app will redirect you.
 
 If your mobile app provides a capability to add different items to a shopping cart and checkout, then you should store the cart information on your server and generate a secure reference identifier of this shoppint cart. You should then pass the reference identifier from your mobile app to your checkout application's URL, when launching it inside  SFSafariViewController or Android Custom Tabs.
 
-> **Important:** Do not pass cart details in URL query parameters. Use a secure REST/GraphQL API calls to store your cart information in your server side store from mobile app and only pass a session id or shopping cart id from mobile application to web application.
+> **Important:** Do not pass cart details in URL query parameters. Use a secure REST/GraphQL API calls to store your cart information in your server side store from mobile app and only pass a cryptographically secure identifier like a session id or shopping cart id from mobile application to web application.
 
 Your web application should render the supported payment methods, like PayPal, Venmo, Debit or Credit Card and render the payment methods on the web application's entry page.
 Once the buyer clicks one of available payment method, e.g. PayPal, approves the payment, present a success message on your web application along with a return to mobile app button.
