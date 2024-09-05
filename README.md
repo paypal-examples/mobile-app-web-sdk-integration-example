@@ -1,6 +1,6 @@
 # mobile-app-web-sdk-integration-example
 
-This Mono Repo contains Three Applications to demostrate an example of using PayPal Web SDK in your Native Mobile Applications. 
+This Mono Repo contains three applications to demostrate examples of using PayPal Web SDK in your Native Mobile Applications. 
 1. A Web Application which should be hosted on your Web Server
 2. A Sample Android Application using Java to show an example of using the above Web Application in your Android Application.
 3. A Sample iOS Application using SwiftUI to show an example of using the above Web Application in your iOS Application.
@@ -12,19 +12,20 @@ This Mono Repo contains Three Applications to demostrate an example of using Pay
 You may use this guide as a reference to integrate a web Javascript SDK to launch a checkout experience in your mobile application if you cannot use Native SDKs. 
 
 ## 1. Prerequisites
-1. You have a mobile app which is installed on buyer's mobile device.
-2. You host a web based checkout application to render different Payment Options like [PayPal Standard Checkout](https://developer.paypal.com/studio/checkout/standard) or [Card Processing](https://developer.paypal.com/studio/checkout/advanced).
+1. You have a mobile application which is installed on buyer's mobile device.
+2. You can host a web based checkout application to render different Payment Options like [PayPal Standard Checkout](https://developer.paypal.com/studio/checkout/standard) or [Card Processing](https://developer.paypal.com/studio/checkout/advanced) using a Web Technology.
 2. Your mobile application has a capability to launch [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) or [Android Custom Tabs](https://developer.chrome.com/docs/android/custom-tabs).
 3. Your mobile application must have a configured universal link or deep link to properly return users from your web checkout application to your mobile application. Please refer to [Android App Links](https://developer.android.com/training/app-links) and [iOS Universal links](https://developer.apple.com/ios/universal-links/)
 
 ## 2. Understand the Payment Flow
-Before diving into integration, understand the payment flow:
+Before diving into integration, lets understand the payment flow
 
-1. User Action: The user initiates a checkout (e.g., by clicking a "Pay" button on your Native Mobile App).
-2. Payment Options: Your app renders your
-3. User Action: Buyer Selects one of the Payment options (PayPal) from your web based checkout page and approves the payment on PayPal.com.
-4. Confirmation: PayPal returns a success or failure response to your web checkout experience.
-5. Hand off to App: Your web checkout web application redirects the buyer back to success screen of your mobile app.
+1. User Action: The user initiates a checkout (e.g., by tapping a "Pay" button on your mobile application).
+2. Mobile to Web Application Handoff: You redirect the buyer to your web application to complete checkout. 
+3. Payment Options: Your web application renders supported payment options like PayPal, Venmo, etc. 
+4. User Action: Buyer selects one of the payment options, PayPal, from your web based checkout application and approves the payment on PayPal.com.
+5. Confirmation: PayPal returns a success response to your web checkout experience.
+6. Hand off to App: Your web checkout web application redirects the buyer back to success screen of your mobile application.
 
    
 ```mermaid
@@ -80,16 +81,19 @@ sequenceDiagram
 ```
 
 ## 3. Host your Web Checkout Experience
-Create a web based checkout application which should serve PayPal [JavaScript SDK](/sdk/js). Your web application must have an entry point (url endpoint) which your mobile app will redirect you.
+Create a web based checkout application which should serve PayPal [JavaScript SDK](https://developer.paypal.com/sdk/js/). Your web application must have an entry point (url endpoint) which your mobile application will redirect the buyers to.
 
-If your mobile app provides a capability to add different items to a shopping cart and checkout, then you should store the cart information on your server and generate a secure reference identifier of this shoppint cart. You should then pass the reference identifier from your mobile app to your checkout application's URL, when launching it inside  SFSafariViewController or Android Custom Tabs.
+If your mobile application provides a capability to add different items to a shopping cart and checkout, then you should store the cart information on your server and generate a cryptographically secure reference identifier of this shoppint cart. 
+
+You should then pass the reference identifier from your mobile app to your checkout web application's URL, when launching it in SFSafariViewController or Android Custom Tabs.
 
 > **Important:** Do not pass cart details in URL query parameters. Use a secure REST/GraphQL API calls to store your cart information in your server side store from mobile app and only pass a cryptographically secure identifier like a session id or shopping cart id from mobile application to web application.
 
 Your web application should render the supported payment methods, like PayPal, Venmo, Debit or Credit Card and render the payment methods on the web application's entry page.
 Once the buyer clicks one of available payment method, e.g. PayPal, approves the payment, present a success message on your web application along with a return to mobile app button.
 
-> **Important:** Attempting a redirection back to your mobile application without any interaction by the user may be declined by the Chrome / Safari due to transient activation. 
+> **Important:** Attempting a redirection back to your mobile application without any interaction by the user may be declined by the Chrome / Safari due to transient activation.
+> You should present a confirmation button to the buyer and redirect in the [onclick](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) handler or use a HTML [Anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) to redirect the buyer to mobile application. 
 
 From the success page of your web application you should also notify your backend server that the buyer has approved the payment. This is crucial to avoid losing the status if the buyer taps on the close button of SFSafariViewController or Android Custom Tabs after approving the payment.
 
