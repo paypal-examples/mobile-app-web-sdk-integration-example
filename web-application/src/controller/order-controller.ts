@@ -245,8 +245,7 @@ async function getOrderHandler(request: FastifyRequest, reply: FastifyReply) {
   // Send only required data to web
   reply.send({
     id: data.id,
-    status: data.status,
-    purchase_units: data.purchase_units,
+    status: data.status
   });
 }
 

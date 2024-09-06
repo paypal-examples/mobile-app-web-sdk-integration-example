@@ -1,111 +1,120 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>PayPal Buttons Demo</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  </head>
-  <body>
-    <h1>PayPal Buttons Example</h1>
-    <div id="paypal-button-container" style="max-width: 440px">
-      <input type="button" value="Checkout Now" id="checkout-button" />
-    </div>
-    <script>
-      // **Important** : Validate these URLs against an allowed list of URLs.
-      // Never Trust any input from Web URLs
-      const urlSearchParams = new URLSearchParams(window.location.search);
-      const params = Object.fromEntries(urlSearchParams.entries());
-      // MUST VALIDATE THESE URLS AGAINST AN ALLOWED LIST
-      const onApproveUrl = params.onApproveUrl;
-      const onCancelUrl = params.onCancelUrl;
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+</head>
+<body>
+<h1>PayPal Buttons Example</h1>
+<div id="paypal-button-container" style="max-width: 440px">
+    <input type="button" value="Checkout Now" id="checkout-button"/>
+</div>
+<script>
+    function isValidUrl(url) {
+        try {
+            new URL(url);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
 
-      // Example function to show a result to the user. Your site's UI library can be used instead,
-      // however alert() should not be used.
-      function resultMessage(message) {
+    // **Important** : Validate these URLs against an allowed list of URLs.
+    // Never Trust any input from Web URLs
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    // MUST VALIDATE THESE URLS AGAINST AN ALLOWED LIST
+    const onApproveUrl = params.onApproveUrl;
+    const onCancelUrl = params.onCancelUrl;
+
+    // Example function to show a result to the user. Your site's UI library can be used instead,
+    // however alert() should not be used.
+    function resultMessage(message) {
         const container = document.getElementById("paypal-button-container");
         const p = document.createElement("p");
         p.innerHTML = message;
         container.parentNode.appendChild(p);
-      }
+    }
 
-      if (!onApproveUrl || !onCancelUrl) {
+    if (!isValidUrl(onApproveUrl) || !isValidUrl(onCancelUrl)) {
         resultMessage(
-          `<h2>Error: Approval and Cancel URLs have not been set.</h2>`
+            `<h2>Error: Approval and Cancel URLs have not been set.</h2>`
         );
-      }
+    }
 
-      async function handleCheckoutButtonClick() {
-        if (!onApproveUrl || !onCancelUrl) {
-          resultMessage(
-            `<h3>Error: Approval and Cancel URLs have not been set. Cannot proceed</h3>`
-          );
-          return;
+    async function handleCheckoutButtonClick() {
+        if (!isValidUrl(onApproveUrl) || !isValidUrl(onCancelUrl)) {
+            resultMessage(
+                `<h3>Error: Approval and Cancel URLs have not been set. Cannot proceed</h3>`
+            );
+            return;
         }
 
         try {
-          const response = await fetch("/api/paypal/create-order", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              // Important: Once the buyer completes the checkout on PayPal.com,
-              // redirect the buyer back to your web application, then to your mobile application.
-              onApproveUrl: new URL(
-                `/paypal-checkout-complete?redirectUrl=${onApproveUrl}`,
-                location.origin
-              ).href,
-              onCancelUrl: new URL(
-                `/paypal-checkout-complete?redirectUrl=${onCancelUrl}`,
-                location.origin
-              ).href,
-              cart: [
-                {
-                  sku: "1blwyeo8",
-                  quantity: 2,
+            const response = await fetch("/api/paypal/create-order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
                 },
-                {
-                  sku: "i5b1g92y",
-                  quantity: 1,
-                },
-              ],
-            }),
-          });
-          const orderData = await response.json();
+                body: JSON.stringify({
+                    // Important: Once the buyer completes the checkout on PayPal.com,
+                    // redirect the buyer back to your web application, then to your mobile application.
+                    onApproveUrl: new URL(
+                        `/paypal-checkout-complete?redirectUrl=${onApproveUrl}`,
+                        location.origin
+                    ).href,
+                    onCancelUrl: new URL(
+                        `/paypal-checkout-complete?redirectUrl=${onCancelUrl}`,
+                        location.origin
+                    ).href,
+                    cart: [
+                        {
+                            sku: "1blwyeo8",
+                            quantity: 2,
+                        },
+                        {
+                            sku: "i5b1g92y",
+                            quantity: 1,
+                        },
+                    ],
+                }),
+            });
+            const orderData = await response.json();
 
-          if (orderData?.links) {
-            // Get the redirect URL for PayPal checkout from the links array and redirect the buyer to this URL.
-            const href = orderData.links.find(
-              (link) => link.rel === "approve"
-            ).href;
-            // Redirect the buyer
-            location.href = href;
-          } else {
-            console.error(
-              { callback: "createOrder", serverResponse: orderData },
-              JSON.stringify(orderData, null, 2)
-            );
-            // (Optional) The following hides the button container and shows a message about why checkout can't be initiated
-            const errorDetail = orderData?.details?.[0];
-            resultMessage(
-              `Could not initiate PayPal Checkout...<br><br>${
-                errorDetail?.issue || ""
-              } ${errorDetail?.description || orderData?.message || ""} ` +
-                (orderData?.debug_id ? `(${orderData.debug_id})` : ""),
-              { hideButtons: true }
-            );
-          }
+            if (orderData?.links) {
+                // Get the redirect URL for PayPal checkout from the links array and redirect the buyer to this URL.
+                const href = orderData.links.find(
+                    (link) => link.rel === "approve"
+                ).href;
+                // Redirect the buyer
+                location.href = href;
+            } else {
+                console.error(
+                    {callback: "createOrder", serverResponse: orderData},
+                    JSON.stringify(orderData, null, 2)
+                );
+                // (Optional) The following hides the button container and shows a message about why checkout can't be initiated
+                const errorDetail = orderData?.details?.[0];
+                resultMessage(
+                    `Could not initiate PayPal Checkout...<br><br>${
+                        errorDetail?.issue || ""
+                    } ${errorDetail?.description || orderData?.message || ""} ` +
+                    (orderData?.debug_id ? `(${orderData.debug_id})` : ""),
+                    {hideButtons: true}
+                );
+            }
         } catch (err) {
-          // For demo purposes
-          console.error("Create Order Failed", err);
-          resultMessage(`<h1>Create Order Failed</h1><p>${err.message}</p>`);
+            // For demo purposes
+            console.error("Create Order Failed", err);
+            resultMessage(`<h1>Create Order Failed</h1><p>${err.message}</p>`);
         }
-      }
+    }
 
-      document
+    document
         .getElementById("checkout-button")
         .addEventListener("click", handleCheckoutButtonClick);
-    </script>
-  </body>
+</script>
+</body>
 </html>
