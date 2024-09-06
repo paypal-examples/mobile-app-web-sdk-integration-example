@@ -93,7 +93,7 @@ If your mobile application provides a capability to add different items to a sho
 
 You should then pass the reference identifier from your mobile application to your web application's URL, when launching it in SFSafariViewController or Android Custom Tabs.
 
-> **Important:** Do not pass cart details in URL query parameters. Use a secure REST/GraphQL API calls to store your cart information in your server side store from mobile app and only pass a cryptographically secure identifier like a session id or shopping cart id from mobile application to web application.
+> **Important:** Do not pass cart details in URL query parameters. Use secure REST/GraphQL API calls to store your cart information in your server-side store from your mobile app and only pass a cryptographically secure identifier like a session id or shopping cart id from mobile application to web application.
 
 Your web application should render the supported payment methods, like PayPal, Venmo, Debit or Credit Card on the web application's entry page.
 Once the buyer clicks one of available payment method, e.g. PayPal, approves the payment, present a success message on your web application along with a return to mobile app button.
