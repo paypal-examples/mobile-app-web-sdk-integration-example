@@ -87,7 +87,7 @@ sequenceDiagram
 ```
 
 ## 3. Host your Web Checkout Experience
-Create a web based checkout application which should serve PayPal [JavaScript SDK](https://developer.paypal.com/sdk/js/). Your web application must have an entry point (url endpoint) which your mobile application will redirect the buyers to.
+Create a web-based checkout application which should serve PayPal's [Web SDK](https://developer.paypal.com/sdk/js/). Your web application must have an entry point (url endpoint) which your mobile application will redirect buyers to.
 
 If your mobile application provides a capability to add different items to a shopping cart and checkout, then you should store the cart information on your server and generate a cryptographically secure reference identifier of this shoppint cart. 
 
