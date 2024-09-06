@@ -29,7 +29,7 @@ Before diving into integration, lets understand the payment flow
 1. User Action: The user initiates a checkout (e.g., by tapping a "Pay" button on your mobile application).
 2. Mobile-to-Web Application Handoff: You redirect the buyer to your web application to complete checkout. 
 3. Payment Options: Your web application renders supported payment options like PayPal, Venmo, etc. 
-4. User Action: Buyer selects one of the payment options, PayPal, from your web based checkout application and approves the payment on PayPal.com.
+4. User Action: Buyer selects one of the payment options, like PayPal, from your web-based checkout application and approves the payment on PayPal.com.
 5. Confirmation: PayPal returns a success response to your web checkout experience.
 6. Hand off to App: Your web application redirects the buyer back to success screen of your mobile application.
 
