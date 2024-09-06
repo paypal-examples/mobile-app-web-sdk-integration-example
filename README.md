@@ -101,7 +101,7 @@ Once the buyer clicks one of available payment method, e.g. PayPal, approves the
 > **Important:** Attempting a redirection back to your mobile application without any interaction by the user may be declined by Chrome / Safari due to transient activation.
 > You should present a confirmation button to the buyer and redirect in the [onclick](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) handler or use a HTML [Anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) to redirect the buyer to mobile application. 
 
-From the success page of your web application you should also notify your backend server that the buyer has approved the payment. This is crucial to avoid losing the status if the buyer taps on the close button of SFSafariViewController or Android Custom Tabs after approving the payment.
+From the success page of your web application you should also notify your backend server that the buyer has approved the payment. This is crucial to avoid losing the status of the order if the buyer taps on the close button of SFSafariViewController or Android Custom Tabs after approving the payment.
 
 Your mobile application should determine if the buyer has approved the session by doing a lookup on the reference identifier once the buyer is redirected back to your Mobile Application. 
 
