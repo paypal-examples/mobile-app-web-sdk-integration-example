@@ -1,7 +1,7 @@
 # mobile-app-web-sdk-integration-example
 
 This Mono Repo contains three applications to demostrate examples of using PayPal Web SDK in your Native Mobile Applications. 
-1. A Web Application which should be hosted on your Web Server
+1. A Web Application which should be hosted on your Web Server. This web application contains server side application written in Node.js and the client side HTML code.
 2. A Sample Android Application using Java to show an example of using the above Web Application in your Android Application.
 3. A Sample iOS Application using SwiftUI to show an example of using the above Web Application in your iOS Application.
 
