@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">AndroidPayPalWebSdkIntegrationExample</string>
     <string name="action_shopping_cart">Shopping Cart</string>
-    <string name="merchant_hosted_checkout_web_url_spb">https://shipping-change-sandbox-e66e294a9266.herokuapp.com/buttons.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&amp;onCancelUrl==https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/</string>
-    <string name="merchant_hosted_checkout_web_url_api">https://shipping-change-sandbox-e66e294a9266.herokuapp.com/api-integration.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&amp;onCancelUrl==https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/</string>
+    <string name="merchant_hosted_checkout_web_url_spb">https://shipping-change-sandbox-e66e294a9266.herokuapp.com/buttons.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&amp;onCancelUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/</string>
+    <string name="merchant_hosted_checkout_web_url_api">https://shipping-change-sandbox-e66e294a9266.herokuapp.com/api-integration.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&amp;onCancelUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/</string>
     <string name="paypal_dot_com_web_url">https://www.paypal.com</string>
     <!-- Strings used for fragments for navigation -->
     <string name="shopping_cart_fragment_label">Cart Details</string>
