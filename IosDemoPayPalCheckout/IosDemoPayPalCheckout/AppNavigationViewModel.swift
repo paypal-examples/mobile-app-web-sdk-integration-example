@@ -12,7 +12,7 @@ class AppNavigationViewModel: ObservableObject {
 
     @Published var currentTab: CheckoutDeepLinks = .cartDetails
     @Published var safariViewController: SFSafariViewController?
-    @Published var isSafariViewControllerOpen: Bool = false;
+    @Published var isSafariViewControllerOpen: Bool = false
     @Published var payPalOrderID: String?
 
     func getQueryStringParameter(from url: URL, for param: String) -> String? {
