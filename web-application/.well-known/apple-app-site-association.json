@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "43253H4X22.com.example.IosDemoPayPalCheckout",
+        "paths": [
+          "/onsuccess/*",
+          "/redirect-to-app/onapprove/*",
+          "/redirect-to-app/oncancel/*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "43253H4X22.com.example.IosDemoPayPalCheckout"
+    ]
+  }
+}
