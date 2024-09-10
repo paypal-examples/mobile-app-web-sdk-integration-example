@@ -36,5 +36,4 @@ public class CatalogFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }
