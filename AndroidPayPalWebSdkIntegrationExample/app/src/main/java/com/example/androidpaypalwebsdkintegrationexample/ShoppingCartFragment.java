@@ -18,23 +18,26 @@ import com.example.androidpaypalwebsdkintegrationexample.databinding.FragmentSho
  * has added items to their cart and clicks shopping cart button.
  * This view should also render a list of selected payment methods like PayPal and link / button to
  * view full list of all available payment options.
- *
+ * <p>
  * This example demonstrates two buttons,
  * 1. Render a PayPal Web SDK integration and Orders API using a Chrome Custom Tab
  * 2. Render a PayPal Checkout integration using Orders API.
- *
+ * <p>
  * The buttons rendered on this page takes the buyers to a web application hosted by merchant which should
  * lists down payment methods available, e.g. PayPal.
- *
+ * <p>
  * When the buyer clicks the PayPal button inside the Chrome Custom tab, they would be redirected
  * to PayPal.com to review and approve their payment.
  * After they approve the payment on PayPal.com, they would be taken back to the web application
  * hosted by the merchant.
- *
+ * <p>
  * The web application needs to render a redirect button which should take the buyers back to this
  * Android App using App Links/Deep Links.
  */
 public class ShoppingCartFragment extends Fragment {
+
+    private final String merchantHostedCheckoutWebUrlSpb = "https://shipping-change-sandbox-e66e294a9266.herokuapp.com/buttons.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&onCancelUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/";
+    private final String merchantHostedCheckoutWebUrlApi = "https://shipping-change-sandbox-e66e294a9266.herokuapp.com/api-integration.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&onCancelUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/";
 
     private FragmentShoppingCartBinding binding;
 
@@ -52,8 +55,8 @@ public class ShoppingCartFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Uri payPalSpbUrl = Uri.parse(getString(R.string.merchant_hosted_checkout_web_url_spb));
-        Uri payPalApiCheckoutUrl = Uri.parse(getString(R.string.merchant_hosted_checkout_web_url_api));
+        Uri payPalSpbUrl = Uri.parse(merchantHostedCheckoutWebUrlSpb);
+        Uri payPalApiCheckoutUrl = Uri.parse(merchantHostedCheckoutWebUrlApi);
         CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder().build();
 
         binding.checkoutButtonPaypalSpb.setOnClickListener(new View.OnClickListener() {
