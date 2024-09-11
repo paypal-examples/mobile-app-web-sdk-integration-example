@@ -68,12 +68,6 @@ public class ShoppingCartFragment extends Fragment {
                 customTabsIntent.launchUrl(binding.getRoot().getContext(), payPalApiCheckoutUrl);
             }
         });
-        binding.openPaypalDotComButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                customTabsIntent.launchUrl(binding.getRoot().getContext(), Uri.parse(getString(R.string.paypal_dot_com_web_url)));
-            }
-        });
         binding.productCatalogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
