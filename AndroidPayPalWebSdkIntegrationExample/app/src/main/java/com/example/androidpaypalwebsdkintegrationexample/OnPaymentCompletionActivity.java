@@ -26,10 +26,7 @@ public class OnPaymentCompletionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_payment_completion);
         binding = ActivityOnPaymentCompletionBinding.inflate(getLayoutInflater());
-        // ATTENTION: This was auto-generated to handle app links.
-        Intent appLinkIntent = getIntent();
-        String appLinkAction = appLinkIntent.getAction();
-        Uri appLinkData = appLinkIntent.getData();
+        // get can also get the appLinkIntent using getIntent() to retrieve any associated data
     }
 
     @Override
