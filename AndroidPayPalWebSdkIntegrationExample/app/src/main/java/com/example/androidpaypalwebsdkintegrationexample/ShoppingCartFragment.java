@@ -26,7 +26,7 @@ import com.example.androidpaypalwebsdkintegrationexample.databinding.FragmentSho
  * The buttons rendered on this page takes the buyers to a web application hosted by merchant which should
  * lists down payment methods available, e.g. PayPal.
  *
- * When the buyer clicks the PayPal button inside the Chrome Custom tab, they would be refirected
+ * When the buyer clicks the PayPal button inside the Chrome Custom tab, they would be redirected
  * to PayPal.com to review and approve their payment.
  * After they approve the payment on PayPal.com, they would be taken back to the web application
  * hosted by the merchant.
