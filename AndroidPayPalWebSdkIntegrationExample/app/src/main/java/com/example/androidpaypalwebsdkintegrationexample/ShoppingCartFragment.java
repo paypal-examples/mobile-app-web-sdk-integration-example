@@ -20,7 +20,7 @@ import com.example.androidpaypalwebsdkintegrationexample.databinding.FragmentSho
  * view full list of all available payment options.
  *
  * This example demonstrates two buttons,
- * 1. Render a PayPal Web SDK integration and Orders API using a Chrome Custom Tabs
+ * 1. Render a PayPal Web SDK integration and Orders API using a Chrome Custom Tab
  * 2. Render a PayPal Checkout integration using Orders API.
  *
  * The buttons rendered on this page takes the buyers to a web application hosted by merchant which should
