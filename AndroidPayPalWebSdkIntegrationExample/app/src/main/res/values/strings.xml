@@ -10,7 +10,6 @@
     <string name="checkoutPayPalSpb">PayPal Checkout SPB</string>
     <string name="checkoutPayPalApi">PayPal Checkout API</string>
     <string name="productCatalogButtonLabel">Product Catalog</string>
-    <string name="launchPaypalDotCom">Open PayPal.com</string>
     <string name="closeBtnLabel">Close</string>
     <string name="paymentCompletionSuccess">Your payment is successfully completed.</string>
     <string name="paymentCompletionSuccessPayPalOrderId">PayPal Order ID =</string>
