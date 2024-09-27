@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC1C5F7C2CA72EF7008A5E30 /* IosDemoPayPalCheckout.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IosDemoPayPalCheckout.entitlements; sourceTree = "<group>"; };
 		AC4CED782C5F3ACE000BD4E6 /* IosDemoPayPalCheckout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosDemoPayPalCheckout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4CED7B2C5F3ACE000BD4E6 /* PayPalCheckoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalCheckoutApp.swift; sourceTree = "<group>"; };
 		AC4CED7D2C5F3ACE000BD4E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,18 +64,12 @@
 		AC4CED7A2C5F3ACE000BD4E6 /* IosDemoPayPalCheckout */ = {
 			isa = PBXGroup;
 			children = (
-				ACCC8EEB2C6173BE00C1EF64 /* Info.plist */,
-				AC4CED7B2C5F3ACE000BD4E6 /* IosDemoPayPalCheckoutApp.swift */,
-				AC4CED7D2C5F3ACE000BD4E6 /* ContentView.swift */,
-				AC4CED7F2C5F3AD1000BD4E6 /* Assets.xcassets */,
-				AC4CED812C5F3AD1000BD4E6 /* Preview Content */,
+				AC1C5F7C2CA72EF7008A5E30 /* IosDemoPayPalCheckout.entitlements */,
 				ACCC8EEC2C61789200C1EF64 /* AppNavigationViewModel.swift */,
 				AC4CED7F2C5F3AD1000BD4E6 /* Assets.xcassets */,
 				ACCC8EF02C617D6000C1EF64 /* CartDetailsView.swift */,
 				AC4CED7D2C5F3ACE000BD4E6 /* ContentView.swift */,
 				ACCC8EEB2C6173BE00C1EF64 /* Info.plist */,
-				AC565CE42C76B13A00F1E0BF /* IosDemoPayPalCheckout.entitlements */,
-				AC949DA32C7D119F009DDF8C /* IosDemoPayPalCheckoutRelease.entitlements */,
 				AC4CED7B2C5F3ACE000BD4E6 /* PayPalCheckoutApp.swift */,
 				AC66AC212C65285C005CB634 /* PayPalPaymentFailureView.swift */,
 				ACCC8EF22C6181CC00C1EF64 /* PayPalPaymentSuccessView.swift */,
@@ -298,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IosDemoPayPalCheckout/IosDemoPayPalCheckout.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IosDemoPayPalCheckout/Preview Content\"";
@@ -327,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IosDemoPayPalCheckout/IosDemoPayPalCheckout.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IosDemoPayPalCheckout/Preview Content\"";
