@@ -21,7 +21,7 @@
         <activity
             android:name=".OnPaymentCompletionActivity"
             android:exported="true">
-            <tools:validation testUrl="https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess" />
+            <tools:validation testUrl="https://mobile-app-integration-example-034c22d87430.herokuapp.com/onsuccess" />
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -30,7 +30,7 @@
 
                 <data
                     android:scheme="https"
-                    android:host="shipping-change-sandbox-e66e294a9266.herokuapp.com"
+                    android:host="mobile-app-integration-example-034c22d87430.herokuapp.com"
                     android:pathPrefix="/onsuccess" />
             </intent-filter>
         </activity>
