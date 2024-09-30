@@ -36,8 +36,8 @@ import com.example.androidpaypalwebsdkintegrationexample.databinding.FragmentSho
  */
 public class ShoppingCartFragment extends Fragment {
 
-    private final String merchantHostedCheckoutWebUrlSpb = "https://shipping-change-sandbox-e66e294a9266.herokuapp.com/buttons.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&onCancelUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/";
-    private final String merchantHostedCheckoutWebUrlApi = "https://shipping-change-sandbox-e66e294a9266.herokuapp.com/api-integration.html?onApproveUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/onsuccess/&onCancelUrl=https://shipping-change-sandbox-e66e294a9266.herokuapp.com/redirect-to-app/oncancel/";
+    private final String merchantHostedCheckoutWebUrlSpb = "https://mobile-app-integration-example-034c22d87430.herokuapp.com/buttons.html?onApproveUrl=https://mobile-app-integration-example-034c22d87430.herokuapp.com/onsuccess/&onCancelUrl=https://mobile-app-integration-example-034c22d87430.herokuapp.com/redirect-to-app/oncancel/";
+    private final String merchantHostedCheckoutWebUrlApi = "https://mobile-app-integration-example-034c22d87430.herokuapp.com/api-integration.html?onApproveUrl=https://mobile-app-integration-example-034c22d87430.herokuapp.com/onsuccess/&onCancelUrl=https://mobile-app-integration-example-034c22d87430.herokuapp.com/redirect-to-app/oncancel/";
 
     private FragmentShoppingCartBinding binding;
 
