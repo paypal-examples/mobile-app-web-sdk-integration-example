@@ -3,9 +3,9 @@ import SafariServices
 
 enum CheckoutDeepLinks: String {
     case cartDetails
-    case payPalBuyerCanceled
-    case payPalPaymentSuccess
-    case payPalPaymentFailure
+    case payPalBuyerCanceled = "/oncancel"
+    case payPalPaymentSuccess = "/onsuccess"
+    case payPalPaymentFailure = "/onfailure"
 }
 
 class AppNavigationViewModel: ObservableObject {
@@ -24,7 +24,7 @@ class AppNavigationViewModel: ObservableObject {
         dismissSafariViewController()
         print("Got URL: \(url)")
 
-        guard let host = URLComponents(url: url, resolvingAgainstBaseURL: true)?.host else {
+        guard let path = URLComponents(url: url, resolvingAgainstBaseURL: true)?.path else {
             return false
         }
 
@@ -34,9 +34,9 @@ class AppNavigationViewModel: ObservableObject {
         }
 
         payPalOrderID = orderID
-        print("Got Host: \(host) Order ID: \(orderID)")
+        print("Got path: \(path) Order ID: \(orderID)")
 
-        switch host {
+        switch path {
         case CheckoutDeepLinks.payPalBuyerCanceled.rawValue:
             currentTab = .payPalPaymentFailure
         case CheckoutDeepLinks.payPalPaymentSuccess.rawValue:
